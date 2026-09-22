@@ -121,6 +121,18 @@
   .feat h4{margin:11px 0 4px;font-size:15px;font-weight:700;font-family:var(--sans)}
   .feat p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
 
+  /* sell-sheet checklist (detailed sections) */
+  .sheet{margin-top:28px}
+  .sheet .grp{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);font-weight:700;margin:0 0 2px}
+  .sheet .grp + .checklist{margin-top:2px}
+  .sheet-group + .sheet-group{margin-top:26px}
+  .checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 34px}
+  @media(max-width:640px){ .checklist{grid-template-columns:1fr} }
+  .checklist li{display:flex;gap:10px;align-items:flex-start;padding:11px 2px;border-top:1px solid var(--line);font-size:14px;color:var(--text);line-height:1.45}
+  .checklist li::before{content:"✓";color:var(--ac);font-weight:800;font-size:13px;flex:none;line-height:1.5}
+  .checklist li b{font-weight:700}
+  .checklist li .d{color:var(--muted)}
+
   /* price + cta rail */
   .prod-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px;
     background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
@@ -255,13 +267,30 @@
     <div class="eyebrow">01 — Accreditation</div>
     <h2>Accreditation that actually means something.</h2>
     <p class="lede">Any school can hang a certificate on the wall. NMAO accreditation is <b>earned against nine standards and independently verified</b> — then made public, so prospective families can trust it at a glance.</p>
-    <div class="feature-grid">
-      <div class="feat"><div class="fi">🛡️</div><h4>Nine real standards</h4><p>Safety, lineage, insurance, background checks, operations, hygiene, and more — over 40 checkpoints.</p></div>
-      <div class="feat"><div class="fi">🏅</div><h4>The NMAO seal</h4><p>A window decal with a scannable QR that shows prospects exactly what the school has achieved.</p></div>
-      <div class="feat"><div class="fi">🔎</div><h4>Public verification</h4><p>Anyone can look up a school and confirm its accreditation is real and current.</p></div>
-      <div class="feat"><div class="fi">📍</div><h4>National directory listing</h4><p>Accredited schools stand out to families searching for a place to train.</p></div>
-      <div class="feat"><div class="fi">🧬</div><h4>Lineage & credentials verified</h4><p>Instructor rank and lineage are traced and confirmed — not self-claimed.</p></div>
-      <div class="feat"><div class="fi">⚖️</div><h4>Held to account</h4><p>Accreditation is reviewed regularly and revocable — it stays meaningful.</p></div>
+    <div class="sheet">
+      <div class="sheet-group">
+        <div class="grp">The nine standards — independently verified</div>
+        <ul class="checklist">
+          <li><span><b>A real, established school</b> <span class="d">— registered, accountable, clear mission</span></span></li>
+          <li><span><b>Verified lineage &amp; credentials</b> <span class="d">— traced, not self-claimed</span></span></li>
+          <li><span><b>Insured &amp; background-checked</b> <span class="d">— CPR &amp; first-aid ready</span></span></li>
+          <li><span><b>A safe, monitored space</b> <span class="d">— video &amp; fire safety</span></span></li>
+          <li><span><b>Qualified instructors</b> <span class="d">— vetted, clear promotion standards</span></span></li>
+          <li><span><b>Open &amp; transparent</b> <span class="d">— findable, public presence</span></span></li>
+          <li><span><b>Professional operations</b> <span class="d">— documented, fair, data-protective</span></span></li>
+          <li><span><b>Clean &amp; health-conscious</b> <span class="d">— hygiene &amp; allergy aware</span></span></li>
+          <li><span><b>Held to account</b> <span class="d">— reviewed regularly, revocable</span></span></li>
+        </ul>
+      </div>
+      <div class="sheet-group">
+        <div class="grp">What the school earns</div>
+        <ul class="checklist">
+          <li><span><b>The NMAO window seal</b> <span class="d">— with a scannable QR</span></span></li>
+          <li><span><b>A public verify-a-school page</b> <span class="d">— trust at a glance</span></span></li>
+          <li><span><b>A national directory listing</b> <span class="d">— stand out to families</span></span></li>
+          <li><span><b>Over 40 checkpoints</b> <span class="d">— reviewed by a national body</span></span></li>
+        </ul>
+      </div>
     </div>
     <div class="prod-foot">
       <div class="price">
@@ -282,16 +311,30 @@
     <div class="eyebrow">02 — Member Management Software</div>
     <h2>The software that runs your school.</h2>
     <p class="lede">Everything it takes to operate a modern martial arts school — <b>scheduling, tuition, retail, communication, and testing</b> — in one system, with dedicated apps for your members and your staff.</p>
-    <div class="feature-grid">
-      <div class="feat"><div class="fi">📅</div><h4>Class scheduling</h4><p>Timetables, bookings, and attendance that respect your school's own time zone.</p></div>
-      <div class="feat"><div class="fi">💳</div><h4>Billing & autopay</h4><p>Recurring tuition, saved cards, family accounts, and hands-off collection.</p></div>
-      <div class="feat"><div class="fi">🛒</div><h4>Point of sale & retail</h4><p>Sell gear with sizes and colors, track inventory, and take payment at the desk.</p></div>
-      <div class="feat"><div class="fi">👨‍👩‍👧</div><h4>Family & student portal</h4><p>Parents manage memberships, schedules, and payments themselves.</p></div>
-      <div class="feat"><div class="fi">💬</div><h4>Two-way messaging</h4><p>Text your members and get replies — reminders, broadcasts, and follow-ups.</p></div>
-      <div class="feat"><div class="fi">🥋</div><h4>Belt-test management</h4><p>Invite students, collect fees, and run testing without the paperwork.</p></div>
-      <div class="feat"><div class="fi">📱</div><h4>Member app</h4><p>Schedule, membership, and family — in your students' pockets.</p></div>
-      <div class="feat"><div class="fi">🧑‍🏫</div><h4>Staff app</h4><p>Check-ins, rosters, and point of sale from the floor.</p></div>
-      <div class="feat"><div class="fi">📊</div><h4>Owner dashboard</h4><p>Revenue, retention, and what needs attention — at a glance.</p></div>
+    <div class="sheet">
+      <div class="sheet-group">
+        <div class="grp">Everything your school needs</div>
+        <ul class="checklist">
+          <li><span><b>Member &amp; family management</b></span></li>
+          <li><span><b>Class scheduling &amp; online booking</b></span></li>
+          <li><span><b>One-tap attendance / roll call</b></span></li>
+          <li><span><b>Belt testing &amp; rank tracking</b></span></li>
+          <li><span><b>Recurring tuition &amp; autopay</b> <span class="d">(Stripe)</span></span></li>
+          <li><span><b>Point-of-sale &amp; retail store</b></span></li>
+          <li><span><b>Size / variant inventory tracking</b></span></li>
+          <li><span><b>Multiple cards per family</b></span></li>
+          <li><span><b>2-way text messaging</b> <span class="d">to members</span></span></li>
+          <li><span><b>Member portal + native apps</b></span></li>
+          <li><span><b>Family / guardian access</b></span></li>
+          <li><span><b>Private-session booking</b> <span class="d">&amp; availability</span></span></li>
+          <li><span><b>Comps, waivers &amp; credits</b></span></li>
+          <li><span><b>Live revenue dashboard</b> <span class="d">&amp; reports</span></span></li>
+          <li><span><b>Public scan-to-pay QR codes</b></span></li>
+          <li><span><b>In-platform refunds</b></span></li>
+          <li><span><b>Staff roles &amp; permissions</b></span></li>
+          <li><span><b>Per-school branding</b></span></li>
+        </ul>
+      </div>
     </div>
     <div class="prod-foot">
       <div class="price">
@@ -312,13 +355,37 @@
     <div class="eyebrow">03 — Tournament League</div>
     <h2>A league that keeps students coming back.</h2>
     <p class="lede">A <b>season-long national competition</b> your students can chase all year — judged forms and weapons, head-to-head dueling, live leaderboards, and collectible medallions — plus the tools to run your own in-house tournaments.</p>
-    <div class="feature-grid">
-      <div class="feat"><div class="fi">🗓️</div><h4>A nine-event season</h4><p>A year-long journey with standings, not a one-off tournament.</p></div>
-      <div class="feat"><div class="fi">📲</div><h4>The Compete app</h4><p>Students enter, film, and submit their events right from their phone.</p></div>
-      <div class="feat"><div class="fi">⚖️</div><h4>Independent judging</h4><p>Forms and weapons scored on a consistent, multi-criterion rubric.</p></div>
-      <div class="feat"><div class="fi">⚔️</div><h4>Head-to-head duels</h4><p>Random, rating-matched match-ups keep competition fresh between events.</p></div>
-      <div class="feat"><div class="fi">🏵️</div><h4>Collectible medallions</h4><p>A physical and digital award students build across a season.</p></div>
-      <div class="feat"><div class="fi">🏫</div><h4>In-house tournaments</h4><p>Run your own school events with QR sign-up and card payment built in.</p></div>
+    <div class="sheet">
+      <div class="sheet-group">
+        <div class="grp">The athlete experience</div>
+        <ul class="checklist">
+          <li><span><b>Compete from your own dojo</b> <span class="d">— film it, submit it, done</span></span></li>
+          <li><span><b>Traditional &amp; creative</b> <span class="d">forms + weapons</span></span></li>
+          <li><span><b>Certified judges score every entry</b> <span class="d">— 6-criterion rubric, 2 angles</span></span></li>
+          <li><span><b>Head-to-head dueling</b> <span class="d">— rating-matched, community-voted</span></span></li>
+          <li><span><b>National skill rating + dueling Elo</b></span></li>
+          <li><span><b>100+ badges, living frames &amp; crests</b></span></li>
+          <li><span><b>Collectible 9-piece Medallion</b> <span class="d">— earned across the season</span></span></li>
+          <li><span><b>Cinematic Monthly Reveal</b> <span class="d">ceremony</span></span></li>
+          <li><span><b>Season leaderboards &amp; standings</b> <span class="d">— best 5 of 9</span></span></li>
+          <li><span><b>Guardian-managed &amp; COPPA-safe</b></span></li>
+        </ul>
+      </div>
+      <div class="sheet-group">
+        <div class="grp">Run it &amp; earn</div>
+        <ul class="checklist">
+          <li><span><b>Up to 35% of entry fees back</b> <span class="d">— every month</span></span></li>
+          <li><span><b>$0 signup</b> <span class="d">— no contracts, no risk</span></span></li>
+          <li><span><b>School portal &amp; roster</b> <span class="d">— confirm rank, track athletes</span></span></li>
+          <li><span><b>One-click free provisioning</b> <span class="d">from the Member platform</span></span></li>
+          <li><span><b>Mission Control</b> <span class="d">— live operator console</span></span></li>
+          <li><span><b>In-house tournament tools</b> <span class="d">— run your own events</span></span></li>
+          <li><span><b>Certified judge app</b> <span class="d">— paid per scored video</span></span></li>
+          <li><span><b>Sponsor engine</b> <span class="d">— targeted placements</span></span></li>
+          <li><span><b>Ambassador program</b> <span class="d">— earn on every school &amp; entry</span></span></li>
+          <li><span><b>Web-checkout entry pay</b> <span class="d">+ physical awards shipped</span></span></li>
+        </ul>
+      </div>
     </div>
     <div class="prod-foot">
       <div class="price">
