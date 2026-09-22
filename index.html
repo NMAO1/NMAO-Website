@@ -63,7 +63,9 @@
     display:flex;align-items:center;justify-content:center}
   .hero .seal::before{content:"";position:absolute;width:180%;height:180%;border-radius:50%;
     background:radial-gradient(circle,rgba(232,184,75,.30),rgba(232,184,75,.08) 45%,transparent 70%);filter:blur(3px)}
-  .hero .seal img{position:relative;width:148px;height:148px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6))}
+  .hero .seal img{position:relative;width:148px;height:148px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));animation:sealFloat 5s ease-in-out infinite}
+  @keyframes sealFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @media(prefers-reduced-motion:reduce){ .hero .seal img{animation:none} }
   @media(max-width:520px){ .hero .seal,.hero .seal img{width:120px;height:120px} }
   .hero .eyebrow{position:relative;color:var(--gold)}
   .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,60px);line-height:1.02;margin:14px auto 0;max-width:14ch;letter-spacing:-.02em;text-wrap:balance}
@@ -236,7 +238,7 @@
         </ul>
         <div class="hook">
           <div class="line"><span class="amt"><s>$99/mo</s></span><span class="badge">Waived</span></div>
-          <span class="note">+ 1% capped at $200/mo. Pass it to families = <b>$0 out of pocket</b>.</span>
+          <span class="note">+ 1% capped at $200/mo. Pass it on to customers = <b>$0 out of pocket</b>.</span>
         </div>
         <span class="go">Explore the software →</span>
       </a>
@@ -340,7 +342,7 @@
     <div class="prod-foot">
       <div class="price">
         <div class="big"><s>$99/mo</s> &nbsp;+ 1%</div>
-        <div class="sub">1% of tuition, <b>capped at $200/mo</b>. Pass the 1% along to families and the software costs your school <b>$0 out of pocket</b>.</div>
+        <div class="sub">1% of tuition, <b>capped at $200/mo</b>. Pass the 1% on to customers and the software costs your school <b>$0 out of pocket</b>.</div>
       </div>
       <div class="actions">
         <a class="btn btn-sap" href="https://onboard.nmao.us">Start your school →</a>
