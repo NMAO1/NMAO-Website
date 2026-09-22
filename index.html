@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>National Martial Arts Organization</title>
+<meta name="description" content="One organization behind three things every serious martial arts school needs: trusted accreditation, software to run the business, and a competition league that keeps students hungry.">
+<meta property="og:title" content="National Martial Arts Organization">
+<meta property="og:description" content="Accreditation, school-management software, and a national tournament league — built to raise the standard of martial arts business.">
+<link rel="icon" href="https://app.nmao.us/nmao_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0f1e; --ink2:#111730; --card:#151c34; --card2:#1a2340; --line:#28304e;
+    --text:#eef1f8; --muted:#9aa3bd; --muted2:#727b99;
+    --gold:#e8b84b; --gold-hi:#f7e08c; --gold-dk:#a67c1f;
+    --sap:#54a6f2; --sap-hi:#93cbff;
+    --ember:#f0655a; --ember-hi:#ff9d8f;
+    --sans:'Inter',system-ui,-apple-system,sans-serif;
+    --serif:'Fraunces',Georgia,serif;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{position:relative}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;font-weight:700}
+  h2{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.08}
+  h3{font-family:var(--serif);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:11px;padding:13px 22px;transition:transform .15s ease,box-shadow .15s ease,background .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-gold{color:#161200;background:linear-gradient(160deg,var(--gold-hi),var(--gold) 55%,var(--gold-dk));box-shadow:0 10px 26px rgba(232,184,75,.22)}
+  .btn-ghost{color:var(--text);border:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-hi)}
+  .btn-sap{color:#03121f;background:linear-gradient(160deg,var(--sap-hi),var(--sap));box-shadow:0 10px 26px rgba(84,166,242,.22)}
+  .btn-ember{color:#1e0503;background:linear-gradient(160deg,var(--ember-hi),var(--ember));box-shadow:0 10px 26px rgba(240,101,90,.22)}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(11,15,30,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.02em;font-size:15px}
+  .brand img{width:30px;height:30px;object-fit:contain}
+  .brand .full{color:var(--text)}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links a{color:var(--muted);font-size:14px;font-weight:600}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{padding:9px 16px;border-radius:9px;background:linear-gradient(160deg,var(--gold-hi),var(--gold) 60%,var(--gold-dk));color:#161200!important;font-size:13.5px;font-weight:700}
+  .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:22px;cursor:pointer}
+  @media(max-width:820px){ .nav-links{display:none} .menu-btn{display:block} }
+
+  /* ---------- hero ---------- */
+  .hero{overflow:hidden;text-align:center;padding:76px 0 60px}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+    radial-gradient(80% 55% at 50% -8%, rgba(232,184,75,.16), transparent 62%),
+    radial-gradient(60% 40% at 12% 108%, rgba(84,166,242,.10), transparent 60%),
+    radial-gradient(60% 40% at 90% 112%, rgba(240,101,90,.10), transparent 60%)}
+  .hero .seal{position:relative;width:82px;height:82px;margin:0 auto 26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 36%,#1d2740 0,var(--ink2) 72%);
+    box-shadow:0 0 0 1.5px var(--gold-dk),0 0 0 6px rgba(232,184,75,.09),0 14px 36px rgba(0,0,0,.5)}
+  .hero .seal img{width:44px;height:44px;object-fit:contain}
+  .hero .eyebrow{position:relative;color:var(--gold)}
+  .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,60px);line-height:1.02;margin:14px auto 0;max-width:14ch;letter-spacing:-.02em;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--gold-hi)}
+  .hero p.sub{position:relative;color:var(--muted);font-size:clamp(16px,2.4vw,19px);max-width:38em;margin:20px auto 0}
+  .hero p.sub b{color:var(--text)}
+  .hero .cta-row{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+
+  /* ---------- pillars ---------- */
+  .pillars{padding:14px 0 22px}
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:820px){ .pillar-grid{grid-template-columns:1fr} }
+  .pillar{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .15s,border-color .15s}
+  .pillar:hover{transform:translateY(-3px)}
+  .pillar .pn{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--ac)}
+  .pillar h3{font-size:20px;margin:6px 0 6px}
+  .pillar p{color:var(--muted);font-size:14px;margin:0}
+  .pillar .go{display:inline-block;margin-top:12px;color:var(--ac);font-weight:700;font-size:13.5px}
+  .pillar[data-ac="gold"]{--ac:var(--gold-hi)} .pillar[data-ac="gold"]:hover{border-color:var(--gold-dk)}
+  .pillar[data-ac="sap"]{--ac:var(--sap-hi)} .pillar[data-ac="sap"]:hover{border-color:var(--sap)}
+  .pillar[data-ac="ember"]{--ac:var(--ember-hi)} .pillar[data-ac="ember"]:hover{border-color:var(--ember)}
+
+  /* ---------- product sections ---------- */
+  .prod{padding:64px 0;border-top:1px solid var(--line)}
+  .prod .eyebrow{color:var(--ac)}
+  .prod h2{font-size:clamp(27px,4.6vw,40px);margin:10px 0 0;max-width:16ch}
+  .prod .lede{color:var(--muted);font-size:17px;max-width:42em;margin:16px 0 0}
+  .prod .lede b{color:var(--text)}
+  .prod::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;
+    background:radial-gradient(60% 42% at var(--gx,15%) 0%, var(--glow), transparent 60%)}
+  .prod > .wrap{position:relative}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+  @media(max-width:760px){ .feature-grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:460px){ .feature-grid{grid-template-columns:1fr} }
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 16px}
+  .feat .fi{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;
+    background:color-mix(in srgb,var(--ac) 18%,transparent);border:1px solid color-mix(in srgb,var(--ac) 34%,transparent)}
+  .feat h4{margin:11px 0 4px;font-size:15px;font-weight:700;font-family:var(--sans)}
+  .feat p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+
+  /* price + cta rail */
+  .prod-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px;
+    background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .prod-foot .price{flex:1 1 260px;min-width:240px}
+  .prod-foot .price .big{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--text);line-height:1.1}
+  .prod-foot .price .big s{color:var(--muted2);font-weight:400;font-size:20px}
+  .prod-foot .price .sub{color:var(--muted);font-size:13.5px;margin-top:5px}
+  .prod-foot .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+  .prod[data-ac="gold"]{--ac:var(--gold-hi);--glow:rgba(232,184,75,.13)}
+  .prod[data-ac="sap"]{--ac:var(--sap-hi);--glow:rgba(84,166,242,.12);--gx:88%}
+  .prod[data-ac="ember"]{--ac:var(--ember-hi);--glow:rgba(240,101,90,.12)}
+
+  /* ---------- integrity band ---------- */
+  .integrity{padding:60px 0;border-top:1px solid var(--line);text-align:center;
+    background:linear-gradient(180deg,rgba(232,184,75,.05),transparent)}
+  .integrity .eyebrow{color:var(--gold)}
+  .integrity h2{font-size:clamp(24px,4vw,34px);margin:12px auto 0;max-width:20ch}
+  .integrity p{color:var(--muted);font-size:16px;max-width:40em;margin:16px auto 0}
+  .integrity .honor{font-family:var(--serif);font-style:italic;font-size:clamp(18px,3vw,23px);color:var(--text);max-width:24em;margin:26px auto 0;line-height:1.4;text-wrap:balance}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding:46px 0 40px;background:var(--ink2)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+  @media(max-width:760px){ .foot-grid{grid-template-columns:1fr 1fr} }
+  @media(max-width:440px){ .foot-grid{grid-template-columns:1fr} }
+  .foot-brand .brand{margin-bottom:12px}
+  .foot-brand p{color:var(--muted);font-size:13px;max-width:26em;margin:0}
+  .foot-col h5{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin:0 0 12px;font-weight:700}
+  .foot-col a{display:block;color:var(--muted);font-size:14px;padding:5px 0}
+  .foot-col a:hover{color:var(--text)}
+  .foot-bottom{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:var(--muted2);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><img src="https://app.nmao.us/nmao_logo.png" alt="NMAO"><span class="full">NMAO</span></a>
+    <nav class="nav-links">
+      <a href="#accreditation">Accreditation</a>
+      <a href="#software">Software</a>
+      <a href="#league">League</a>
+      <a href="https://nmao.us/verify-a-schools-accreditation/">Verify a School</a>
+      <a class="nav-cta" href="https://nmao.us/apply-for-accreditation/">Apply →</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('m').hidden=!document.getElementById('m').hidden">☰</button>
+  </div>
+  <div id="m" hidden style="border-top:1px solid var(--line);background:var(--ink2)">
+    <div class="wrap" style="display:flex;flex-direction:column;padding:10px 22px 16px;gap:2px">
+      <a href="#accreditation" style="color:var(--muted);padding:9px 0">Accreditation</a>
+      <a href="#software" style="color:var(--muted);padding:9px 0">Software</a>
+      <a href="#league" style="color:var(--muted);padding:9px 0">League</a>
+      <a href="https://nmao.us/verify-a-schools-accreditation/" style="color:var(--muted);padding:9px 0">Verify a School</a>
+      <a href="https://nmao.us/apply-for-accreditation/" style="color:var(--gold-hi);padding:9px 0;font-weight:700">Apply for accreditation →</a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div class="seal"><img src="https://app.nmao.us/nmao_logo.png" alt="NMAO seal"></div>
+    <div class="eyebrow">National Martial Arts Organization</div>
+    <h1>Raising the standard of the <em>martial arts business</em>.</h1>
+    <p class="sub">One organization behind three things every serious school needs: <b>trusted accreditation</b>, <b>software that runs the business</b>, and a <b>competition league</b> that keeps students hungry.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#accreditation">Explore accreditation</a>
+      <a class="btn btn-ghost" href="#software">See the software</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillar-grid">
+      <a class="pillar" data-ac="gold" href="#accreditation">
+        <div class="pn">01 — ACCREDITATION</div>
+        <h3>Prove your integrity</h3>
+        <p>Meet nine independently verified standards and earn the NMAO seal, a directory listing, and a public verify page.</p>
+        <span class="go">Learn more →</span>
+      </a>
+      <a class="pillar" data-ac="sap" href="#software">
+        <div class="pn">02 — SOFTWARE</div>
+        <h3>Run the whole school</h3>
+        <p>Scheduling, billing, retail, family portal, messaging, belt tests — plus member and staff apps, in one place.</p>
+        <span class="go">Learn more →</span>
+      </a>
+      <a class="pillar" data-ac="ember" href="#league">
+        <div class="pn">03 — LEAGUE</div>
+        <h3>Give them something to chase</h3>
+        <p>A season-long tournament league with a competition app, judged events, dueling, and collectible medallions.</p>
+        <span class="go">Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACCREDITATION ===================== -->
+<section class="prod" data-ac="gold" id="accreditation">
+  <div class="wrap">
+    <div class="eyebrow">01 — Accreditation</div>
+    <h2>Accreditation that actually means something.</h2>
+    <p class="lede">Any school can hang a certificate on the wall. NMAO accreditation is <b>earned against nine standards and independently verified</b> — then made public, so prospective families can trust it at a glance.</p>
+    <div class="feature-grid">
+      <div class="feat"><div class="fi">🛡️</div><h4>Nine real standards</h4><p>Safety, lineage, insurance, background checks, operations, hygiene, and more — over 40 checkpoints.</p></div>
+      <div class="feat"><div class="fi">🏅</div><h4>The NMAO seal</h4><p>A window decal with a scannable QR that shows prospects exactly what the school has achieved.</p></div>
+      <div class="feat"><div class="fi">🔎</div><h4>Public verification</h4><p>Anyone can look up a school and confirm its accreditation is real and current.</p></div>
+      <div class="feat"><div class="fi">📍</div><h4>National directory listing</h4><p>Accredited schools stand out to families searching for a place to train.</p></div>
+      <div class="feat"><div class="fi">🧬</div><h4>Lineage & credentials verified</h4><p>Instructor rank and lineage are traced and confirmed — not self-claimed.</p></div>
+      <div class="feat"><div class="fi">⚖️</div><h4>Held to account</h4><p>Accreditation is reviewed regularly and revocable — it stays meaningful.</p></div>
+    </div>
+    <div class="prod-foot">
+      <div class="price">
+        <div class="big">Earn the seal</div>
+        <div class="sub">See exactly what the seal represents, then apply. Application fees and requirements are listed in full.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://nmao.us/apply-for-accreditation/">Apply for accreditation →</a>
+        <a class="btn btn-ghost" href="https://seal.nmao.us">See the standards</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOFTWARE ===================== -->
+<section class="prod" data-ac="sap" id="software">
+  <div class="wrap">
+    <div class="eyebrow">02 — Member Management Software</div>
+    <h2>The software that runs your school.</h2>
+    <p class="lede">Everything it takes to operate a modern martial arts school — <b>scheduling, tuition, retail, communication, and testing</b> — in one system, with dedicated apps for your members and your staff.</p>
+    <div class="feature-grid">
+      <div class="feat"><div class="fi">📅</div><h4>Class scheduling</h4><p>Timetables, bookings, and attendance that respect your school's own time zone.</p></div>
+      <div class="feat"><div class="fi">💳</div><h4>Billing & autopay</h4><p>Recurring tuition, saved cards, family accounts, and hands-off collection.</p></div>
+      <div class="feat"><div class="fi">🛒</div><h4>Point of sale & retail</h4><p>Sell gear with sizes and colors, track inventory, and take payment at the desk.</p></div>
+      <div class="feat"><div class="fi">👨‍👩‍👧</div><h4>Family & student portal</h4><p>Parents manage memberships, schedules, and payments themselves.</p></div>
+      <div class="feat"><div class="fi">💬</div><h4>Two-way messaging</h4><p>Text your members and get replies — reminders, broadcasts, and follow-ups.</p></div>
+      <div class="feat"><div class="fi">🥋</div><h4>Belt-test management</h4><p>Invite students, collect fees, and run testing without the paperwork.</p></div>
+      <div class="feat"><div class="fi">📱</div><h4>Member app</h4><p>Schedule, membership, and family — in your students' pockets.</p></div>
+      <div class="feat"><div class="fi">🧑‍🏫</div><h4>Staff app</h4><p>Check-ins, rosters, and point of sale from the floor.</p></div>
+      <div class="feat"><div class="fi">📊</div><h4>Owner dashboard</h4><p>Revenue, retention, and what needs attention — at a glance.</p></div>
+    </div>
+    <div class="prod-foot">
+      <div class="price">
+        <div class="big"><s>$99/mo</s> &nbsp;+ 1%</div>
+        <div class="sub">1% of tuition, <b>capped at $200/mo</b>. Pass the 1% along to families and the software costs your school <b>$0 out of pocket</b>.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-sap" href="https://onboard.nmao.us">Start your school →</a>
+        <a class="btn btn-ghost" href="https://nmao.us/contact-us/">Book a walkthrough</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LEAGUE ===================== -->
+<section class="prod" data-ac="ember" id="league">
+  <div class="wrap">
+    <div class="eyebrow">03 — Tournament League</div>
+    <h2>A league that keeps students coming back.</h2>
+    <p class="lede">A <b>season-long national competition</b> your students can chase all year — judged forms and weapons, head-to-head dueling, live leaderboards, and collectible medallions — plus the tools to run your own in-house tournaments.</p>
+    <div class="feature-grid">
+      <div class="feat"><div class="fi">🗓️</div><h4>A nine-event season</h4><p>A year-long journey with standings, not a one-off tournament.</p></div>
+      <div class="feat"><div class="fi">📲</div><h4>The Compete app</h4><p>Students enter, film, and submit their events right from their phone.</p></div>
+      <div class="feat"><div class="fi">⚖️</div><h4>Independent judging</h4><p>Forms and weapons scored on a consistent, multi-criterion rubric.</p></div>
+      <div class="feat"><div class="fi">⚔️</div><h4>Head-to-head duels</h4><p>Random, rating-matched match-ups keep competition fresh between events.</p></div>
+      <div class="feat"><div class="fi">🏵️</div><h4>Collectible medallions</h4><p>A physical and digital award students build across a season.</p></div>
+      <div class="feat"><div class="fi">🏫</div><h4>In-house tournaments</h4><p>Run your own school events with QR sign-up and card payment built in.</p></div>
+    </div>
+    <div class="prod-foot">
+      <div class="price">
+        <div class="big">$0 to join</div>
+        <div class="sub">No signup cost. <b>Up to 35% of every entry fee</b> comes back to your school.</div>
+      </div>
+      <div class="actions">
+        <a class="btn btn-ember" href="https://join.nmao.us">Bring your school into the league →</a>
+        <a class="btn btn-ghost" href="https://league.nmao.us">For competitors</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INTEGRITY ===================== -->
+<section class="integrity">
+  <div class="wrap">
+    <div class="eyebrow">One organization, one standard</div>
+    <h2>Built to elevate the profession — not just individual schools.</h2>
+    <p>Accreditation earns trust. Software runs the business. The league keeps students engaged. Together they raise the floor for what a martial arts school can be, and give the schools that take it seriously the recognition they deserve.</p>
+    <p class="honor">"We honor the integrity of every school committed to elevating the standard of business within the martial arts."</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="https://app.nmao.us/nmao_logo.png" alt="NMAO"><span class="full">NMAO</span></a>
+        <p>The National Martial Arts Organization — accreditation, school-management software, and a national tournament league.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Accreditation</h5>
+        <a href="https://nmao.us/apply-for-accreditation/">Apply</a>
+        <a href="https://nmao.us/verify-a-schools-accreditation/">Verify a school</a>
+        <a href="https://nmao.us/fees-for-applications/">Application fees</a>
+        <a href="https://seal.nmao.us">What the seal means</a>
+        <a href="https://directory.nmao.us">School directory</a>
+      </div>
+      <div class="foot-col">
+        <h5>Products</h5>
+        <a href="https://onboard.nmao.us">School software</a>
+        <a href="https://join.nmao.us">Tournament league</a>
+        <a href="https://league.nmao.us">For competitors</a>
+      </div>
+      <div class="foot-col">
+        <h5>Organization</h5>
+        <a href="https://nmao.us/about-us/">About us</a>
+        <a href="https://nmao.us/for-students-and-parents/">Students &amp; parents</a>
+        <a href="https://nmao.us/code-of-ethics/">Code of ethics</a>
+        <a href="https://nmao.us/disciplinary-policies/">Disciplinary policies</a>
+        <a href="https://nmao.us/faqs/">FAQs</a>
+        <a href="https://nmao.us/contact-us/">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> National Martial Arts Organization</span>
+      <span>nmao.us</span>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
