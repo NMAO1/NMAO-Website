@@ -155,7 +155,8 @@
   .integrity .eyebrow{color:var(--gold)}
   .integrity h2{font-size:clamp(24px,4vw,34px);margin:12px auto 0;max-width:20ch}
   .integrity p{color:var(--muted);font-size:16px;max-width:40em;margin:16px auto 0}
-  .integrity .honor{font-family:var(--serif);font-style:italic;font-size:clamp(18px,3vw,23px);color:var(--text);max-width:24em;margin:26px auto 0;line-height:1.4;text-wrap:balance}
+  .integrity .honor{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.6vw,25px);color:var(--text);max-width:none;margin:26px auto 0;line-height:1.4;white-space:nowrap;letter-spacing:.012em;word-spacing:.06em}
+  @media(max-width:700px){.integrity .honor{white-space:normal;font-size:18px;word-spacing:normal;text-wrap:balance;max-width:22em}}
 
   /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line);padding:46px 0 40px;background:var(--ink2)}
