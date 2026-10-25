@@ -59,18 +59,18 @@
     radial-gradient(80% 55% at 50% -8%, rgba(232,184,75,.16), transparent 62%),
     radial-gradient(60% 40% at 12% 108%, rgba(84,166,242,.10), transparent 60%),
     radial-gradient(60% 40% at 90% 112%, rgba(240,101,90,.10), transparent 60%)}
-  .hero .seal{position:relative;width:148px;height:148px;margin:0 auto 26px;
+  .hero .seal{position:relative;width:300px;height:240px;margin:0 auto 22px;
     display:flex;align-items:center;justify-content:center}
   .hero .seal::before{content:"";position:absolute;width:180%;height:180%;border-radius:50%;
     background:radial-gradient(circle,rgba(232,184,75,.30),rgba(232,184,75,.08) 45%,transparent 70%);filter:blur(3px)}
-  .hero .seal img{position:relative;width:148px;height:148px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));animation:sealFloat 5s ease-in-out infinite}
+  .hero .seal img{position:relative;width:300px;height:240px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));animation:sealFloat 5s ease-in-out infinite}
   @keyframes sealFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
   @media(prefers-reduced-motion:reduce){ .hero .seal img{animation:none} }
-  @media(max-width:520px){ .hero .seal,.hero .seal img{width:120px;height:120px} }
+  @media(max-width:520px){ .hero .seal,.hero .seal img{width:210px;height:168px} }
   .hero .eyebrow{position:relative;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(22px,5vw,38px);letter-spacing:.09em;line-height:1.22;margin:0 auto 6px}
   .hero .hero-nmao{position:relative;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:clamp(38px,8vw,64px);letter-spacing:.12em;color:var(--gold-hi);line-height:1;margin:0 auto 8px}
-  .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,60px);line-height:1.02;margin:14px auto 0;max-width:14ch;letter-spacing:-.02em;text-wrap:balance}
-  .hero h1 em{font-style:italic;color:var(--gold-hi)}
+  .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(22px,7.6vw,56px);line-height:1.05;margin:14px auto 0;letter-spacing:-.02em;white-space:nowrap}
+  .hero h1 em{font-style:italic;color:var(--text)}
   .hero p.sub{position:relative;color:var(--muted);font-size:clamp(16px,2.4vw,19px);max-width:38em;margin:20px auto 0}
   .hero p.sub b{color:var(--text)}
   .hero .cta-row{position:relative;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
