@@ -143,7 +143,25 @@
   .foot-col a{display:block;color:var(--muted);font-size:14px;padding:5px 0}
   .foot-col a:hover{color:var(--text)}
   .foot-bottom{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:var(--muted2);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* ---------- Phase 1: life (motion + texture) ---------- */
+  .ra .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.65,.2,1),transform .7s cubic-bezier(.2,.65,.2,1);will-change:opacity,transform}
+  .ra .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){ .ra .reveal{opacity:1!important;transform:none!important;transition:none!important} }
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.045;mix-blend-mode:overlay;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:140px}
+  .nav-cta{position:relative;overflow:hidden}
+  .nav-cta::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;transform:skewX(-20deg);pointer-events:none;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);opacity:0}
+  .nav-cta:hover::after{animation:btnShine .85s ease}
+  @keyframes btnShine{0%{left:-80%;opacity:0}12%{opacity:.8}100%{left:135%;opacity:0}}
+  @media(prefers-reduced-motion:reduce){ .nav-cta:hover::after{animation:none} }
+  .nav-links a:not(.nav-cta){position:relative}
+  .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-5px;width:100%;height:2px;border-radius:2px;
+    background:var(--gold-hi);transform:scaleX(0);transform-origin:left;transition:transform .26s ease}
+  .nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
 </style>
+<script>document.documentElement.classList.add('ra')</script>
 </head>
 <body>
 
@@ -183,7 +201,7 @@
 
 <!-- ===================== MISSION / THOUGHTFUL INTRO ===================== -->
 <section class="mission">
-  <div class="wrap">
+  <div class="wrap reveal">
     <div class="eyebrow">Why we exist</div>
     <h2>Raising the standard of martial arts.</h2>
     <p>The National Martial Arts Organization exists to <b>professionalize the martial arts</b> &mdash; an independent authority that accredits schools, equips them to run, and elevates their students on a national stage. Built <b>by martial artists, for martial artists</b>. We hold that a school which trains with integrity deserves to be formally recognized, and that every family deserves the confidence of a school that has been independently verified.</p>
@@ -195,14 +213,14 @@
 <!-- ===================== OFFERING TILES ===================== -->
 <section class="tiles">
   <div class="wrap">
-    <div class="head">
+    <div class="head reveal">
       <div class="eyebrow">What we deliver</div>
       <h2>Three pillars. One standard.</h2>
       <p>Be accredited, be equipped, be seen on a national stage &mdash; independently governed and nationally recognized.</p>
     </div>
     <div class="tile-grid">
 
-      <a class="tile" data-ac="gold" href="accreditation/">
+      <a class="tile reveal" data-ac="gold" href="accreditation/">
         <div class="tnum">Accreditation</div>
         <h3>Professional legitimacy</h3>
         <p class="ttag">An independent mark of trust — your school verified against nine standards, and publicly listed for any family to check.</p>
@@ -213,7 +231,7 @@
         <span class="go">Explore accreditation →</span>
       </a>
 
-      <a class="tile" data-ac="sap" href="software/">
+      <a class="tile reveal" data-ac="sap" href="software/">
         <div class="tnum">Martial Arts Operating System</div>
         <h3>Operate your school</h3>
         <p class="ttag">Run your whole school from one platform — scheduling, tuition, curriculum, retail and messaging — with dedicated apps for members and staff.</p>
@@ -224,7 +242,7 @@
         <span class="go">Explore the software →</span>
       </a>
 
-      <a class="tile" data-ac="ember" href="league/">
+      <a class="tile reveal" data-ac="ember" href="league/">
         <div class="tnum">Championship Tournament League</div>
         <h3>Keep students engaged</h3>
         <p class="ttag">Give students a season to chase — they compete nationally all year, right from your dojo, for over $10,000 in prizes.</p>
@@ -240,14 +258,14 @@
 </section>
 
 <!-- ===================== IMAGE BAND ===================== -->
-<section class="home-band">
+<section class="home-band reveal">
   <img src="images/home-band.jpg" alt="Martial artists training in a window-lit studio">
   <span class="hb-tint"></span><span class="hb-scrim"></span>
 </section>
 
 <!-- ===================== INTEGRITY ===================== -->
 <section class="integrity">
-  <div class="wrap">
+  <div class="wrap reveal">
     <div class="eyebrow">Three pillars, one mission</div>
     <h2>Built to elevate the martial arts, one school at a time.</h2>
     <p>The accreditation earns trust. The operating system runs the business. The league keeps students engaged. Together they raise the standard for what a martial arts school can be, and give schools the recognition they deserve.</p>
@@ -293,6 +311,7 @@
   </div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="anim.js" defer></script>
 
 </body>
 </html>

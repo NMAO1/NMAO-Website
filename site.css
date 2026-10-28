@@ -129,6 +129,32 @@ footer{border-top:1px solid var(--line);padding:40px 0;background:var(--ink2);ma
 .offer-banner .bscrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,15,30,.08),rgba(11,15,30,.5))}
 @media(max-width:600px){ .offer-banner{aspect-ratio:16/9} }
 
+/* ============================================================
+   Phase 1 — "life": motion + texture (shared across pages)
+   ============================================================ */
+.ra .reveal,.ra .offer-banner,.ra .sheet-group,.ra .prod-foot,.ra .pillar,.ra .founder-card{opacity:0;transform:translateY(20px);
+  transition:opacity .7s cubic-bezier(.2,.65,.2,1),transform .7s cubic-bezier(.2,.65,.2,1);will-change:opacity,transform}
+.ra .reveal.in,.ra .offer-banner.in,.ra .sheet-group.in,.ra .prod-foot.in,.ra .pillar.in,.ra .founder-card.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){ .ra .reveal,.ra .offer-banner,.ra .sheet-group,.ra .prod-foot,.ra .pillar,.ra .founder-card{opacity:1!important;transform:none!important;transition:none!important} }
+
+/* film-grain texture overlay (under the sticky nav, never blocks clicks) */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.045;mix-blend-mode:overlay;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:140px}
+
+/* gold light-sweep on buttons */
+.btn,.nav-cta{position:relative;overflow:hidden}
+.btn::after,.nav-cta::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;transform:skewX(-20deg);pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);opacity:0}
+.btn:hover::after,.nav-cta:hover::after{animation:btnShine .85s ease}
+@keyframes btnShine{0%{left:-80%;opacity:0}12%{opacity:.8}100%{left:135%;opacity:0}}
+@media(prefers-reduced-motion:reduce){ .btn:hover::after,.nav-cta:hover::after{animation:none} }
+
+/* animated nav underline */
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-5px;width:100%;height:2px;border-radius:2px;
+  background:var(--gold-hi);transform:scaleX(0);transform-origin:left;transition:transform .26s ease}
+.nav-links a:not(.nav-cta):hover::after{transform:scaleX(1)}
+
 /* back-to-offerings strip */
 .more-offer{border-top:1px solid var(--line);margin-top:10px;padding:46px 0}
 .more-offer .eyebrow{color:var(--muted2)}
