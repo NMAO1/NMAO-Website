@@ -3,7 +3,7 @@
   'use strict';
 
   /* ---------- scroll reveal ---------- */
-  var els = [].slice.call(document.querySelectorAll('.reveal, .offer-banner, .sheet-group, .prod-foot, .pillar, .founder-card'));
+  var els = [].slice.call(document.querySelectorAll('.reveal, .offer-banner, .sheet-group, .prod-foot, .pillar, .founder-card, .duo-card'));
 
   function reveal(el) { el.classList.add('in'); }
 
