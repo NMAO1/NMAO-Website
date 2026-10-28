@@ -60,3 +60,76 @@ footer{border-top:1px solid var(--line);padding:40px 0;background:var(--ink2);ma
 .foot-col a{display:block;color:var(--muted);font-size:14px;padding:4px 0;text-decoration:none}
 .foot-col a:hover{color:var(--text)}
 .foot-bottom{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:var(--muted2);font-size:12.5px}
+
+/* ============================================================
+   Shared components — offering pages, homepage intro, pillars
+   (accent set per page via [data-ac] on <body> or a section)
+   ============================================================ */
+:root{ --sap:#54a6f2; --sap-hi:#93cbff; --ember:#f0655a; --ember-hi:#ff9d8f; --card2:#1a2340; }
+[data-ac="gold"]{ --ac:var(--gold-hi); --glow:rgba(232,184,75,.13) }
+[data-ac="sap"]{ --ac:var(--sap-hi); --glow:rgba(84,166,242,.12) }
+[data-ac="ember"]{ --ac:var(--ember-hi); --glow:rgba(240,101,90,.12) }
+:root{ --ac:var(--gold-hi); --glow:rgba(232,184,75,.13) }
+
+.wrap-wide{max-width:1000px;margin:0 auto;padding:0 22px}
+
+/* button family (site.css shipped only the gold .btn) */
+.btn-ghost{background:rgba(255,255,255,.02);color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--ac);color:var(--text)}
+.btn-sap{color:#03121f;background:linear-gradient(160deg,var(--sap-hi),var(--sap))}
+.btn-ember{color:#1e0503;background:linear-gradient(160deg,var(--ember-hi),var(--ember))}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+/* offering-page hero band */
+.offer-hero{position:relative;overflow:hidden;padding:54px 0 8px}
+.offer-hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.7;
+  background:radial-gradient(62% 48% at 18% -6%,var(--glow),transparent 62%)}
+.offer-hero > .wrap-wide{position:relative}
+.offer-hero .eyebrow{color:var(--ac)}
+.offer-hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,6vw,52px);line-height:1.04;margin:12px 0 0;letter-spacing:-.02em;text-wrap:balance;max-width:18ch}
+.lede{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:46em;margin:18px 0 0;line-height:1.55}
+.lede b{color:var(--text)}
+
+/* sell-sheet checklists */
+.sheet{margin:34px 0 0}
+.sheet-group + .sheet-group{margin-top:30px}
+.grp{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ac);font-weight:700;margin:0 0 4px}
+.checklist{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+@media(max-width:640px){ .checklist{grid-template-columns:1fr} }
+.checklist li{display:flex;gap:11px;align-items:flex-start;padding:12px 2px;border-top:1px solid var(--line);font-size:14.5px;color:var(--text);line-height:1.45}
+.checklist li::before{content:"\2713";color:var(--ac);font-weight:800;font-size:13px;flex:none;line-height:1.5}
+.checklist li b{font-weight:700}
+.checklist li .d{color:var(--muted)}
+
+/* price + CTA rail */
+.prod-foot{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin:36px 0 10px;
+  background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.prod-foot .price{flex:1 1 260px;min-width:240px}
+.prod-foot .price .big{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--text);line-height:1.1}
+.prod-foot .price .big s{color:var(--muted2);font-weight:400;font-size:20px}
+.prod-foot .price .sub{color:var(--muted);font-size:13.5px;margin-top:6px;line-height:1.5}
+.prod-foot .price .sub b{color:var(--text)}
+.prod-foot .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* three-pillars recap (about + homepage) */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 0}
+@media(max-width:780px){ .pillars{grid-template-columns:1fr} }
+.pillar{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .16s,border-color .16s}
+.pillar:hover{transform:translateY(-3px)}
+.pillar .pk{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ac)}
+.pillar h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:8px 0 6px}
+.pillar p{color:var(--muted);font-size:14px;margin:0;line-height:1.55}
+.pillar .go{display:inline-block;margin-top:12px;color:var(--ac);font-weight:700;font-size:14px}
+.pillar[data-ac="gold"]{--ac:var(--gold-hi)} .pillar[data-ac="sap"]{--ac:var(--sap-hi)} .pillar[data-ac="ember"]{--ac:var(--ember-hi)}
+
+/* offering-page hero banner (treated: grayscale base + accent duotone + navy scrim) */
+.offer-banner{position:relative;overflow:hidden;border-radius:18px;border:1px solid var(--line);aspect-ratio:16/7;margin:30px 0 4px;background:var(--card)}
+.offer-banner .bimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.84)}
+.offer-banner .btint{position:absolute;inset:0;mix-blend-mode:screen;opacity:.5;background:linear-gradient(125deg,var(--ac),transparent 62%)}
+.offer-banner .bscrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,15,30,.08),rgba(11,15,30,.5))}
+@media(max-width:600px){ .offer-banner{aspect-ratio:16/9} }
+
+/* back-to-offerings strip */
+.more-offer{border-top:1px solid var(--line);margin-top:10px;padding:46px 0}
+.more-offer .eyebrow{color:var(--muted2)}
+.more-offer h2{font-family:var(--serif);font-weight:600;font-size:26px;margin:8px 0 0}

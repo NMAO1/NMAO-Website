@@ -3,79 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://nmao.us/about-us/">
+<meta property="og:url" content="https://nmao.us/about-us/">
+<meta name="robots" content="index, follow">
 <title>About Us — NMAO</title>
-<meta name="description" content="NMAO is an independent, third-party accreditation agency raising the standard of martial arts education.">
-<link rel="icon" href="../nmao-logo.png">
+<meta name="description" content="NMAO is an independent, third-party accreditation body raising the standard of martial arts education — with software to run schools and a national tournament league for students.">
+<link rel="icon" href="../nmao-mark-small.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../site.css">
+<style>
+  .about-hero{text-align:center;padding:48px 0 6px;position:relative;overflow:hidden}
+  .about-hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(70% 55% at 50% -10%,rgba(232,184,75,.14),transparent 62%)}
+  .about-hero .seal{position:relative;width:170px;height:136px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
+  .about-hero .seal::before{content:"";position:absolute;width:175%;height:175%;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,184,75,.26),rgba(232,184,75,.06) 46%,transparent 70%)}
+  .about-hero .seal img{position:relative;width:170px;height:136px;object-fit:contain;filter:drop-shadow(0 12px 26px rgba(0,0,0,.55))}
+  .about-hero .eyebrow{position:relative;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(17px,3vw,24px);letter-spacing:.09em}
+  .about-hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(32px,6vw,50px);line-height:1.04;margin:6px 0 0;letter-spacing:-.02em}
+  .about-hero .tag{position:relative;color:var(--muted);font-size:clamp(16px,2.3vw,19px);max-width:34em;margin:16px auto 0}
+  .founder-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:38px 0 0}
+  .founder-head .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .sub-h{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--gold-hi);margin:30px 0 4px}
+  .founder-card{display:flex;gap:24px;align-items:center;margin:14px 0 10px;flex-wrap:wrap}
+  .founder-card .photo{flex:0 0 auto;width:148px;height:148px;border-radius:50%;overflow:hidden;
+    border:2px solid var(--gold);box-shadow:0 12px 30px rgba(0,0,0,.5),0 0 0 5px rgba(232,184,75,.12)}
+  .founder-card .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .founder-card .who .nm{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.08}
+  .founder-card .who .tt{color:var(--gold-hi);font-weight:700;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;margin-top:5px}
+  .founder-card .who .ds{color:var(--muted);font-size:14.5px;margin-top:9px;max-width:44ch;line-height:1.55}
+</style>
 </head>
-<body>
+<body data-ac="gold">
 <header class="nav">
   <div class="nav-in">
-    <a class="brand" href="../"><img src="../nmao-logo.png" alt="NMAO"><span>NMAO</span></a>
+    <a class="brand" href="../"><img src="../nmao-mark-small.png" alt="NMAO"><span>NMAO</span></a>
     <nav class="nav-links">
-      <a href="../">Home</a>
+      <a href="../accreditation/">Accreditation</a>
+      <a href="../software/">Software</a>
+      <a href="../league/">League</a>
       <a href="../about-us/">About</a>
-      <a href="../for-students-and-parents/">Students &amp; Parents</a>
-      <a href="../faqs/">FAQs</a>
-      <a href="../contact-us/">Contact</a>
-      <a class="nav-cta" href="https://accredit.nmao.us">Get accredited</a>
+      <a href="../verify.html">Verify a School</a>
+      <a class="nav-cta" href="https://accredit.nmao.us">Apply &rarr;</a>
     </nav>
-    <button class="menu-btn" aria-label="Menu" onclick="var m=document.getElementById('m');m.hidden=!m.hidden">☰</button>
+    <button class="menu-btn" aria-label="Menu" onclick="var m=document.getElementById('m');m.hidden=!m.hidden">&#9776;</button>
   </div>
   <div id="m" hidden><div class="wrap">
-    <a href="../">Home</a><a href="../about-us/">About</a><a href="../for-students-and-parents/">Students &amp; Parents</a>
-    <a href="../faqs/">FAQs</a><a href="../contact-us/">Contact</a>
-    <a href="https://accredit.nmao.us" style="color:var(--gold-hi);font-weight:700">Get accredited →</a>
+    <a href="../accreditation/">Accreditation</a><a href="../software/">Software</a><a href="../league/">League</a>
+    <a href="../about-us/">About</a><a href="../verify.html">Verify a School</a>
+    <a href="https://accredit.nmao.us" style="color:var(--gold-hi);font-weight:700">Apply for accreditation &rarr;</a>
   </div></div>
 </header>
+
 <main>
-  <section class="page"><div class="wrap">
+  <section class="about-hero"><div class="wrap">
+    <div class="seal"><img src="../nmao-mark.png" alt="NMAO seal"></div>
     <div class="eyebrow">National Martial Arts Organization</div>
     <h1>About Us</h1>
-    <div class="rule"></div>
+    <p class="tag">An independent organization raising the standard of martial arts &mdash; through trusted accreditation, school software, and a national tournament league.</p>
   </div></section>
+
   <section class="content"><div class="wrap">
-    <p>NMAO is a proudly independent, third-party accreditation agency. We exist to support schools that are committed to student safety, instructional excellence, and ethical professionalism. Our mission is simple but powerful: to raise the standard of martial arts education by recognizing schools that operate with transparency, accountability, and care. Our focus is to provide accreditation for martial arts schools who have successfully met the standards of the NMAO — validating these schools for quality and safety is our priority.</p>
+    <h2>What NMAO is</h2>
+    <p>NMAO is a proudly independent, third-party accreditation agency. We exist to support schools that are committed to student safety, instructional excellence, and ethical professionalism. Our mission is simple but powerful: to raise the standard of martial arts education by recognizing schools that operate with transparency, accountability, and care. Our focus is to provide accreditation for martial arts schools who have successfully met the standards of the NMAO &mdash; validating these schools for quality and safety is our priority.</p>
     <p>Holding an accreditation certificate from NMAO exemplifies your martial arts school&rsquo;s hard work and dedication to your art. It is verification that a school is an expert in their field and has successfully met the standards of the NMAO.</p>
     <p>Our accreditation will set you apart from other schools and martial arts practitioners, and it will provide you with the credentials necessary to show your accomplishments.</p>
     <p>As a dedicated agency, we have the advantage of providing our clients with the utmost service in the field. We take pride in developing our standards by utilizing the most appropriate and important criteria to accurately accredit martial arts schools. We have done extensive research on martial arts school operations, martial arts, and weaponry to ensure that our accreditation is held with the highest acknowledgment and respect.</p>
-    <h2>Our Founder</h2>
+
+    <h2>Three ways we help</h2>
+    <p>NMAO brings together everything a serious school needs under one roof.</p>
+    <div class="pillars">
+      <a class="pillar" data-ac="gold" href="../accreditation/"><div class="pk">Accreditation</div><h3>Earn trust</h3><p>Verify your school against nine standards and earn a badge families can check in seconds.</p><span class="go">Explore accreditation &rarr;</span></a>
+      <a class="pillar" data-ac="sap" href="../software/"><div class="pk">Software</div><h3>Run your school</h3><p>Scheduling, tuition, retail, messaging and testing &mdash; in one system, with apps for members and staff.</p><span class="go">Explore the software &rarr;</span></a>
+      <a class="pillar" data-ac="ember" href="../league/"><div class="pk">League</div><h3>Compete nationally</h3><p>A nine-round season your students compete in all year, with grand-finale prizes worth over $10,000.</p><span class="go">Explore the league &rarr;</span></a>
+    </div>
+
+    <div class="founder-head"><span class="k">Our Founder</span></div>
+    <div class="founder-card">
+      <div class="photo"><img src="../images/founder-brad.jpg" alt="Bradley Lemley, founder of NMAO"></div>
+      <div class="who">
+        <div class="nm">Bradley Lemley</div>
+        <div class="tt">Founder &middot; 6th-Degree Black Belt</div>
+        <div class="ds">A martial artist of over 30 years and a school owner since age 19 &mdash; and the founder of the National Martial Arts Organization.</div>
+      </div>
+    </div>
     <p>My name is Bradley Lemley, and martial arts has been my passion for over 30 years &mdash; starting at the young age of 7 and teaching for more than two decades. From my earliest days training under Master Jason Kurdziel, Master Thomas Ingargiola, and renowned kickboxing coach Chris Cardona, martial arts have shaped my path and guided my purpose.</p>
+
+    <div class="sub-h">Building schools through every storm</div>
     <p>At age 19, I began owning and operating martial arts schools, a journey marked by dedication and resilience through challenges such as the financial crisis of 2008, Superstorm Sandy in 2012, and the COVID-19 pandemic in 2020. As a 6th-degree black belt in Shaolin Kempo Karate and a holder of multiple full-contact kickboxing titles &mdash; including two New York State amateur titles and one professional title &mdash; I have experienced firsthand the empowering growth martial arts provide. Yet my proudest accomplishments are the countless moments I&rsquo;ve shared with students, witnessing their confidence and strength flourish.</p>
+
+    <div class="sub-h">A lifelong student</div>
     <p>My pursuit of knowledge extends beyond traditional martial arts. I&rsquo;ve trained under the esteemed Shaolin monk Shi Yan Ming and traveled to India, studying Ashtanga Yoga under the disciplined gaze of Ajay Kumar, a direct student in the lineage of Ashtanga yoga legends Pattabhi Jois and B.K.S. Iyengar. Additionally, since 2017, I&rsquo;ve explored the Yoga Sutras under Sanskrit scholar and philosopher Sudhir Heggadde, enriching my ability to guide students toward calmness and clarity in turbulent times.</p>
+
+    <div class="sub-h">Off the mat</div>
     <p>You might have also seen my martial arts skills showcased in the Tubi movie &ldquo;Lord of the Streets,&rdquo; where I had the unique experience of a short, choreographed combat scene against UFC fighter Khalil &ldquo;Roundtree&rdquo; Ghilbrand and the unique opportunity of being &ldquo;offed&rdquo; by one of my childhood fight heroes, legendary fighter Quinton &ldquo;Rampage&rdquo; Jackson.</p>
     <p>Off the mats, I am a proud doggy dad to my beloved 13.5-year-old husky, Thor.</p>
+
+    <div class="sub-h">Why NMAO exists</div>
     <p>Throughout my journey as both a lifelong student and teacher, I&rsquo;ve come to firmly believe that the safety and wellbeing of students should be a teacher&rsquo;s top priority. Confidence in the training environment &mdash; confidence in your instructor, your school&rsquo;s history and lineage, cleanliness standards, safety preparedness, and insurance for incidents that may happen in high-pressure training in even the safest of schools &mdash; is essential.</p>
     <p>This is why, in collaboration with other professionals, we established the National Martial Arts Organization (NMAO) Accreditation Agency.</p>
-    <p>Contact Bradley Lemley: <a href="mailto:senseibrad@nmao.us">senseibrad@nmao.us</a></p>
+
+    <div class="prod-foot">
+      <div class="price">
+        <div class="big">Ready to raise your standard?</div>
+        <div class="sub">Accreditation is <b>free to start today</b> &mdash; or reach out and we&rsquo;ll walk you through it personally.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://accredit.nmao.us">Get accredited &rarr;</a>
+        <a class="btn btn-ghost" href="mailto:senseibrad@nmao.us">Contact Bradley &rarr;</a>
+      </div>
+    </div>
   </div></section>
 </main>
+
 <footer><div class="foot-in">
   <div class="foot-cols">
     <div class="foot-brand">
-      <a class="brand" href="../"><img src="../nmao-logo.png" alt="NMAO"><span>NMAO</span></a>
-      <p>The National Martial Arts Organization — accreditation, school-management software, and a national tournament league.</p>
+      <a class="brand" href="../"><img src="../nmao-mark-small.png" alt="NMAO"><span>NMAO</span></a>
+      <p>The National Martial Arts Organization &mdash; accreditation, school-management software, and a national tournament league.</p>
     </div>
     <div class="foot-col">
-      <h5>Accreditation</h5>
-      <a href="https://accredit.nmao.us">Get accredited</a>
-      <a href="https://directory.nmao.us">Verify a school</a>
-      <a href="https://seal.nmao.us">What the seal means</a>
-      <a href="../code-of-ethics/">Code of ethics</a>
-      <a href="../disciplinary-policies/">Disciplinary policies</a>
+      <h5>Explore</h5>
+      <a href="../accreditation/">Accreditation</a>
+      <a href="../software/">Software</a>
+      <a href="../league/">League</a>
+      <a href="../verify.html">Verify a school</a>
     </div>
     <div class="foot-col">
       <h5>Organization</h5>
       <a href="../about-us/">About us</a>
       <a href="../for-students-and-parents/">Students &amp; parents</a>
+      <a href="../code-of-ethics/">Code of ethics</a>
       <a href="../faqs/">FAQs</a>
       <a href="../contact-us/">Contact</a>
     </div>
   </div>
-  <div class="foot-bottom">© <span id="yr"></span> National Martial Arts Organization · NMAO Inc. · support@nmao.us</div>
+  <div class="foot-bottom">&copy; <span id="yr"></span> National Martial Arts Organization &middot; Nmao, Inc. &middot; 376 S Bayview Ave, Freeport NY 11520 &middot; senseibrad@nmao.us</div>
 </div></footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
