@@ -142,6 +142,19 @@ footer{border-top:1px solid var(--line);padding:40px 0;background:var(--ink2);ma
 .ra .duo-card.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){ .ra .duo-card{opacity:1!important;transform:none!important;transition:none!important} }
 
+/* how-it-works 3-step */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0 4px}
+@media(max-width:720px){ .steps{grid-template-columns:1fr} }
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+.step .sn{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;font-size:19px;color:#161200;
+  background:linear-gradient(150deg,var(--ac),color-mix(in srgb,var(--ac) 60%,#fff))}
+.step h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:13px 0 6px}
+.step p{color:var(--muted);font-size:14px;margin:0;line-height:1.6}
+.ra .step{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.65,.2,1),transform .7s cubic-bezier(.2,.65,.2,1)}
+.ra .step.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){ .ra .step{opacity:1!important;transform:none!important;transition:none!important} }
+
 /* ============================================================
    Phase 1 — "life": motion + texture (shared across pages)
    ============================================================ */
