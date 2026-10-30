@@ -39,6 +39,49 @@
   .final .btn-row{justify-content:center;margin-top:20px}
   .fineprint{color:var(--muted2);font-size:12px;font-style:italic;margin:26px auto 0;max-width:46em;text-align:center;line-height:1.5}
   .lp-foot{text-align:center;color:var(--muted2);font-size:12.5px;padding:30px 22px 44px;border-top:1px solid var(--line);margin-top:34px}
+
+  /* ===== premium upgrade ===== */
+  /* cinematic hero banner — slow Ken Burns + caption */
+  .offer-banner{margin:34px 0 4px}
+  .offer-banner .bimg{animation:kb 26s ease-in-out infinite alternate}
+  @keyframes kb{from{transform:scale(1.05)}to{transform:scale(1.17)}}
+  @media(prefers-reduced-motion:reduce){ .offer-banner .bimg{animation:none} }
+  .offer-banner .bcap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 24px;
+    font-family:var(--serif);font-weight:600;color:#fff;font-size:clamp(15px,2.3vw,21px);letter-spacing:-.01em;
+    text-shadow:0 2px 26px rgba(0,0,0,.7)}
+  /* gold underline under section headings */
+  .content h2{position:relative}
+  .content h2::after{content:"";display:block;height:3px;width:54px;margin-top:11px;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold-hi),rgba(232,184,75,.12))}
+  /* ambient gold glow behind blocks */
+  .glow{position:relative}
+  .glow::before{content:"";position:absolute;pointer-events:none;z-index:0;left:50%;top:-24px;width:72%;height:220px;
+    transform:translateX(-50%);opacity:.6;background:radial-gradient(58% 100% at 50% 0%,rgba(232,184,75,.09),transparent 72%)}
+  .glow>*{position:relative;z-index:1}
+  /* how-it-works connector + hover */
+  .steps{position:relative}
+  @media(min-width:721px){ .steps::before{content:"";position:absolute;top:42px;left:17%;right:17%;height:2px;z-index:0;
+    background:linear-gradient(90deg,transparent,rgba(232,184,75,.45),transparent)} }
+  .step{position:relative;z-index:1;transition:transform .3s ease,border-color .3s ease}
+  .step:hover{transform:translateY(-4px);border-color:var(--gold)}
+  /* elevated pricing cards */
+  .duo-card.pkg{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+  .duo-card.pkg:hover{transform:translateY(-5px);border-color:var(--gold)}
+  .duo-card.pkg.primary{border-color:var(--gold);
+    box-shadow:0 0 0 1px rgba(232,184,75,.5),0 24px 60px rgba(0,0,0,.45),0 0 70px rgba(232,184,75,.07)}
+  .pkg.primary .dk{color:#161200;font-weight:800;letter-spacing:.1em;padding:4px 13px;border-radius:999px;
+    background:linear-gradient(140deg,var(--gold-hi),var(--gold))}
+  /* slim sticky CTA bar */
+  .scta{position:fixed;left:0;right:0;bottom:0;z-index:50;transform:translateY(130%);
+    transition:transform .45s cubic-bezier(.2,.65,.2,1);background:rgba(11,15,30,.93);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--gold)}
+  .scta.show{transform:none}
+  .scta .in{max-width:1000px;margin:0 auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .scta .t{font-size:14px;color:var(--text);font-weight:600}
+  .scta .t s{color:var(--muted2);font-weight:400;font-size:13px}
+  .scta .t b{color:var(--gold-hi)}
+  .scta .btn{padding:10px 18px;font-size:14px}
+  @media(max-width:520px){ .scta .t{font-size:12.5px} .scta .in{padding:9px 14px;gap:10px} }
 </style>
 <script>document.documentElement.classList.add('ra')</script>
 </head>
@@ -62,12 +105,17 @@
       <a class="btn" href="https://onboard.nmao.us/accredit.html?src=ny-compliance">Start your compliance package &rarr;</a>
       <a class="btn btn-ghost" href="tel:+15163036972">Call 516-303-6972</a>
     </div>
+    <div class="offer-banner">
+      <img class="bimg" src="../images/accreditation-banner.jpg" alt="A martial arts instructor" style="object-position:center 44%">
+      <span class="btint"></span><span class="bscrim"></span>
+      <div class="bcap">Get ahead of the law &mdash; and raise the standard for your school.</div>
+    </div>
   </div></section>
 
   <section class="content"><div class="wrap-wide">
-    <h2>What the law will require</h2>
-    <p>Under the new law, every <b>covered person</b> at a youth-serving facility would need to be screened against sex-offender registries before working with minors.</p>
-    <p style="margin-top:-8px"><a href="https://www.nysenate.gov/legislation/bills/2025/S5257" target="_blank" rel="noopener" style="color:var(--gold-hi);font-weight:600;text-decoration:none">Read the full bill (S5257) on the New York State Senate website &rarr;</a></p>
+    <h2 class="reveal">What the law will require</h2>
+    <p class="reveal">Under the new law, every <b>covered person</b> at a youth-serving facility would need to be screened against sex-offender registries before working with minors.</p>
+    <p class="reveal" style="margin-top:-8px"><a href="https://www.nysenate.gov/legislation/bills/2025/S5257" target="_blank" rel="noopener" style="color:var(--gold-hi);font-weight:600;text-decoration:none">Read the full bill (S5257) on the New York State Senate website &rarr;</a></p>
 
     <div class="sheet">
       <div class="sheet-group reveal">
@@ -91,16 +139,26 @@
       </div>
     </div>
 
-    <h2 style="margin-top:46px">NMAO makes it effortless</h2>
-    <p>Managing multi-registry searches and keeping every covered person's screening current on your own is a tedious, ongoing burden. We handle the heavy lifting &mdash; and get your school <b>accredited</b> at the same time, at no extra cost.</p>
+    <div class="glow">
+      <h2 class="reveal" style="margin-top:46px">NMAO makes it effortless</h2>
+      <p class="reveal">Managing multi-registry searches and keeping every covered person's screening current on your own is a tedious, ongoing burden. We handle the heavy lifting &mdash; and get your school <b>accredited</b> at the same time, at no extra cost.</p>
 
-    <div class="sellpoint reveal">
-      <h3>Compliant ahead of the deadline &mdash; not scrambling after it.</h3>
-      <p><b>NMAO accreditation makes your school fully compliant with the upcoming legislation.</b> We screen every covered person against all three required registries, organize every record into one audit-ready file, and track your recheck dates for you &mdash; so the day the law takes effect, your school is already covered. Have your documentation in hand ahead of time, with nothing to scramble for if the state ever asks. That&rsquo;s peace of mind you can hang on the wall.</p>
+      <div class="sellpoint reveal">
+        <h3>Compliant ahead of the deadline &mdash; not scrambling after it.</h3>
+        <p><b>NMAO accreditation makes your school fully compliant with the upcoming legislation.</b> We screen every covered person against all three required registries, organize every record into one audit-ready file, and track your recheck dates for you &mdash; so the day the law takes effect, your school is already covered. Have your documentation in hand ahead of time, with nothing to scramble for if the state ever asks. That&rsquo;s peace of mind you can hang on the wall.</p>
+      </div>
     </div>
 
+    <h2 class="reveal" style="margin-top:50px">Getting compliant, in three steps</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="sn">1</div><h3>Start online</h3><p>Enter your school&rsquo;s details and the people who need screening &mdash; it takes minutes &mdash; and check out securely.</p></div>
+      <div class="step reveal"><div class="sn">2</div><h3>Send your documents</h3><p>Upload what you have through your private, resumable link. You have a full six months, and nothing you forget slips through.</p></div>
+      <div class="step reveal"><div class="sn">3</div><h3>Get accredited</h3><p>We run the three-registry checks, review your file, and issue your accreditation &mdash; certificate, window badge, and a public verification page.</p></div>
+    </div>
+
+    <h2 class="reveal" style="margin-top:50px">Choose your package</h2>
     <div class="duo">
-      <div class="duo-card pkg reveal">
+      <div class="duo-card pkg primary reveal">
         <div class="dk">Most popular</div>
         <h3>Initial Compliance &amp; Accreditation</h3>
         <div class="price"><s>$399</s> $249 <small>2-year &middot; limited-time &middot; covers your first 2 covered persons</small></div>
@@ -115,7 +173,7 @@
       </div>
     </div>
 
-    <div class="final reveal">
+    <div class="final reveal glow">
       <h2>Get compliant &mdash; and get ahead.</h2>
       <p>Begin online in minutes &mdash; pay securely and upload your documents in one place &mdash; or call us, or return the form enclosed with your letter along with your payment.</p>
       <div class="btn-row">
@@ -132,6 +190,22 @@
 <footer class="lp-foot">
   National Martial Arts Organization &middot; 376 S Bayview Ave, Freeport NY 11520 &middot; support@nmao.us &middot; 516-303-6972
 </footer>
+
+<div class="scta" id="scta"><div class="in">
+  <div class="t">Initial Compliance &amp; Accreditation &mdash; <s>$399</s> <b>$249</b> &middot; 2-year</div>
+  <a class="btn" href="https://onboard.nmao.us/accredit.html?src=ny-compliance">Start your package &rarr;</a>
+</div></div>
+
 <script src="../anim.js" defer></script>
+<script>
+(function(){
+  var bar=document.getElementById('scta'); if(!bar||!('IntersectionObserver' in window)) return;
+  var hero=document.querySelector('.offer-hero'), fin=document.querySelector('.final');
+  var past=false, atEnd=false;
+  function upd(){ bar.classList.toggle('show', past && !atEnd); }
+  new IntersectionObserver(function(e){ past=!e[0].isIntersecting; upd(); }, {rootMargin:'-120px 0px 0px 0px'}).observe(hero);
+  if(fin) new IntersectionObserver(function(e){ atEnd=e[0].isIntersecting; upd(); }, {rootMargin:'0px 0px -40px 0px'}).observe(fin);
+})();
+</script>
 </body>
 </html>
