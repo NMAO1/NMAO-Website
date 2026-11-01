@@ -18,6 +18,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* copy deterrent — disable selection, keep form fields usable */
+  html{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
+  input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;-moz-user-select:text;user-select:text}
   :root{
     --ink:#0b0f1e; --ink2:#111730; --card:#151c34; --card2:#1a2340; --line:#28304e;
     --text:#eef1f8; --muted:#9aa3bd; --muted2:#727b99;
@@ -160,6 +163,9 @@
 </footer>
 
 <script>
+  /* copy deterrent */
+  (function(){var f=function(t){return t&&t.closest&&t.closest('input,textarea,select,[contenteditable="true"]');};
+    ['contextmenu','copy','cut','dragstart'].forEach(function(ev){document.addEventListener(ev,function(e){if(!f(e.target))e.preventDefault();},true);});})();
   document.getElementById('yr').textContent=new Date().getFullYear();
   var STATES=["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"];
   var sel=document.getElementById('state');

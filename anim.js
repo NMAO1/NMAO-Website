@@ -57,3 +57,12 @@
     counters.forEach(countUp);
   }
 })();
+
+/* ---------- copy deterrent ---------- */
+(function () {
+  'use strict';
+  function inField(t) { return t && t.closest && t.closest('input,textarea,select,[contenteditable="true"]'); }
+  ['contextmenu', 'copy', 'cut', 'dragstart'].forEach(function (ev) {
+    document.addEventListener(ev, function (e) { if (!inField(e.target)) e.preventDefault(); }, true);
+  });
+})();

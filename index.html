@@ -31,7 +31,8 @@
     --maxw:1080px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
+  input,textarea,select,[contenteditable="true"]{-webkit-user-select:text;-moz-user-select:text;user-select:text}
   body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   img{max-width:100%}
@@ -209,7 +210,7 @@
   <div class="wrap reveal">
     <div class="eyebrow">Why we exist</div>
     <h2>Raising the standard of martial arts.</h2>
-    <p>The National Martial Arts Organization exists to <b>professionalize the martial arts</b> &mdash; an independent authority that accredits schools, equips them to run, and elevates their students on a national stage. Built <b>by martial artists, for martial artists</b>. We hold that a school which trains with integrity deserves to be formally recognized, and that every family deserves the confidence of a school that has been independently verified.</p>
+    <p>The National Martial Arts Organization, founded in 2015, exists to <b>professionalize the martial arts</b> &mdash; an independent authority that accredits schools, equips them to run, and elevates their students on a national stage. Built <b>by martial artists, for martial artists</b>. We hold that a school which trains with integrity deserves to be formally recognized, and that every family deserves the confidence of a school that has been independently verified.</p>
     <p>We commit to three things, and we lead in each: we <b>accredit</b> schools against nine rigorous standards families can independently verify, we <b>equip</b> them with high-value software to run the entire school, and we <b>stage</b> a national championship league that keeps students striving all year long.</p>
     <p class="close">Honor the schools. Empower the instructors. Inspire the students.</p>
   </div>
@@ -228,16 +229,16 @@
       <a class="tile reveal" data-ac="gold" href="accreditation/">
         <div class="tnum">Accreditation</div>
         <h3>Professional legitimacy</h3>
-        <p class="ttag">An independent mark of trust — your school verified against nine standards, and publicly listed for any family to check.</p>
+        <p class="ttag">An independent mark of trust — your school verified against nine standards, and verifiable for anyone to check.</p>
         <div class="hook">
           <div class="line"><span class="amt"><s>$399</s> $249</span><span class="badge">Limited-time</span></div>
           <span class="note"><b>2-year accreditation.</b> Includes background screening; waives your $99/mo software fee.</span>
         </div>
-        <span class="go">Explore accreditation →</span>
+        <span class="go">Explore the accreditation →</span>
       </a>
 
       <a class="tile reveal" data-ac="sap" href="software/">
-        <div class="tnum">Martial Arts Operating System</div>
+        <div class="tnum">Management Software</div>
         <h3>Operate your school</h3>
         <p class="ttag">Run your whole school from one platform — scheduling, tuition, curriculum, retail and messaging — with dedicated apps for members and staff.</p>
         <div class="hook">
@@ -271,9 +272,9 @@
 <!-- ===================== INTEGRITY ===================== -->
 <section class="integrity">
   <div class="wrap reveal">
-    <div class="eyebrow">Three pillars, one mission</div>
-    <h2>Built to elevate the martial arts, one school at a time.</h2>
-    <p>The accreditation earns trust. The operating system runs the business. The league keeps students engaged. Together they raise the standard for what a martial arts school can be, and give schools the recognition they deserve.</p>
+    <div class="eyebrow" style="font-size:clamp(20px,3.6vw,30px);letter-spacing:.14em">Three pillars, one mission</div>
+    <h2>Built to elevate the martial arts.</h2>
+    <p>The accreditation earns trust. The management system operates the business. The league keeps students engaged. Together they raise the standard for what a martial arts school can be, and give schools the recognition they deserve.</p>
     <p class="honor">Integrity honored. Schools empowered. Students inspired.</p>
   </div>
 </section>
