@@ -60,25 +60,29 @@
   .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:22px;cursor:pointer}
   @media(max-width:860px){ .nav-links{display:none} .menu-btn{display:block} }
 
-  /* ---------- hero ---------- */
-  .hero{overflow:hidden;text-align:center;padding:60px 0 30px}
-  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
-    radial-gradient(80% 55% at 50% -8%, rgba(232,184,75,.16), transparent 62%),
-    radial-gradient(60% 40% at 12% 108%, rgba(84,166,242,.10), transparent 60%),
-    radial-gradient(60% 40% at 90% 112%, rgba(240,101,90,.10), transparent 60%)}
-  .hero .seal{position:relative;width:300px;height:240px;margin:0 auto 22px;
-    display:flex;align-items:center;justify-content:center}
-  .hero .seal::before{content:"";position:absolute;width:180%;height:180%;border-radius:50%;
-    background:radial-gradient(circle,rgba(232,184,75,.30),rgba(232,184,75,.08) 45%,transparent 70%);filter:blur(3px)}
-  .hero .seal img{position:relative;width:300px;height:240px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6));animation:sealFloat 5s ease-in-out infinite}
-  @keyframes sealFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  /* ---------- hero (cinematic) ---------- */
+  .hero{position:relative;overflow:hidden;min-height:clamp(560px,86vh,800px);display:flex;align-items:center;text-align:center}
+  .hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 36%;
+    filter:grayscale(1) contrast(1.07) brightness(.64);transform-origin:center;animation:kb 26s ease-in-out infinite alternate}
+  @keyframes kb{from{transform:scale(1.05)}to{transform:scale(1.17)}}
+  @media(prefers-reduced-motion:reduce){ .hero .hero-bg{animation:none} }
+  .hero .hero-tint{position:absolute;inset:0;mix-blend-mode:screen;opacity:.3;background:linear-gradient(130deg,var(--gold-hi),transparent 58%)}
+  .hero .hero-scrim{position:absolute;inset:0;background:
+    radial-gradient(58% 48% at 50% 40%, rgba(232,184,75,.15), transparent 68%),
+    linear-gradient(180deg,rgba(11,15,30,.78),rgba(11,15,30,.5) 42%,rgba(11,15,30,.95))}
+  .hero .hero-inner{position:relative;z-index:2;width:100%;padding:72px 0}
+  .hero .seal{position:relative;width:184px;height:146px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+  .hero .seal::before{content:"";position:absolute;width:190%;height:190%;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,184,75,.34),rgba(232,184,75,.08) 46%,transparent 70%);filter:blur(2px)}
+  .hero .seal img{position:relative;width:184px;height:146px;object-fit:contain;filter:drop-shadow(0 16px 34px rgba(0,0,0,.72));animation:sealFloat 5.5s ease-in-out infinite}
+  @keyframes sealFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
   @media(prefers-reduced-motion:reduce){ .hero .seal img{animation:none} }
-  @media(max-width:520px){ .hero .seal,.hero .seal img{width:210px;height:168px} }
-  .hero .eyebrow{position:relative;color:var(--gold);font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(22px,5vw,38px);letter-spacing:.09em;line-height:1.22;margin:0 auto 6px}
-  .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(22px,7.6vw,56px);line-height:1.05;margin:14px auto 0;letter-spacing:-.02em;white-space:nowrap}
-  .hero h1 em{font-style:italic;color:var(--text)}
-  .hero p.sub{position:relative;color:var(--muted);font-size:clamp(17px,2.8vw,22px);max-width:40em;margin:24px auto 0}
-  .hero p.sub b{color:var(--text)}
+  .hero .eyebrow{position:relative;color:var(--gold-hi);font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(17px,3.3vw,26px);letter-spacing:.15em;margin:0 auto}
+  .hero h1{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(34px,7vw,64px);line-height:1.02;margin:8px auto 0;letter-spacing:-.022em;max-width:15ch;text-wrap:balance}
+  .hero p.sub{position:relative;color:#d8ddec;font-size:clamp(16.5px,2.5vw,21px);max-width:38em;margin:20px auto 0;line-height:1.55}
+  .hero p.sub b{color:#fff}
+  .hero .hero-cta{position:relative;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px auto 0}
+  @media(max-width:520px){ .hero .seal,.hero .seal img{width:142px;height:113px} .hero .hero-inner{padding:52px 0} }
 
   /* ---------- mission / thoughtful intro ---------- */
   .mission{border-top:1px solid var(--line);padding:56px 0 50px;text-align:center;
@@ -198,10 +202,17 @@
 
 <a id="top"></a>
 <section class="hero">
-  <div class="wrap">
+  <img class="hero-bg" src="images/home-band.jpg" alt="" aria-hidden="true">
+  <span class="hero-tint"></span><span class="hero-scrim"></span>
+  <div class="wrap hero-inner">
     <div class="seal"><img src="nmao-crest.png" alt="NMAO crest"></div>
-    <div class="eyebrow">National Martial Arts<br>Organization</div>
-    <p class="sub"><b>Accreditation</b> that promotes professional legitimacy, <b>software</b> to operate your school, a <b>national championship tournament</b> to inspire your students.</p>
+    <div class="eyebrow">National Martial Arts Organization</div>
+    <h1>Raising the standard of martial arts.</h1>
+    <p class="sub"><b>Accreditation</b> that earns trust, <b>software</b> to operate your school, and a <b>national championship league</b> to inspire your students.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="https://accredit.nmao.us">Get accredited &rarr;</a>
+      <a class="btn btn-ghost" href="#offerings">Explore what we do</a>
+    </div>
   </div>
 </section>
 
@@ -209,15 +220,15 @@
 <section class="mission">
   <div class="wrap reveal">
     <div class="eyebrow">Why we exist</div>
-    <h2>Raising the standard of martial arts.</h2>
-    <p>The National Martial Arts Organization, founded in 2015, exists to <b>professionalize the martial arts</b> &mdash; an independent authority that accredits schools, equips them to run, and elevates their students on a national stage. Built <b>by martial artists, for martial artists</b>. We hold that a school which trains with integrity deserves to be formally recognized, and that every family deserves the confidence of a school that has been independently verified.</p>
+    <h2>Built by martial artists, for martial artists.</h2>
+    <p>The National Martial Arts Organization, founded in 2015, exists to <b>professionalize the martial arts</b> &mdash; an independent authority that accredits schools, equips them to run, and elevates their students on a national stage. We hold that a school which trains with integrity deserves to be formally recognized, and that every family deserves the confidence of a school that has been independently verified.</p>
     <p>We commit to three things, and we lead in each: we <b>accredit</b> schools against nine rigorous standards families can independently verify, we <b>equip</b> them with high-value software to run the entire school, and we <b>stage</b> a national championship league that keeps students striving all year long.</p>
     <p class="close">Honor the schools. Empower the instructors. Inspire the students.</p>
   </div>
 </section>
 
 <!-- ===================== OFFERING TILES ===================== -->
-<section class="tiles">
+<section class="tiles" id="offerings">
   <div class="wrap">
     <div class="head reveal">
       <div class="eyebrow">What we deliver</div>
@@ -261,12 +272,6 @@
 
     </div>
   </div>
-</section>
-
-<!-- ===================== IMAGE BAND ===================== -->
-<section class="home-band reveal">
-  <img src="images/home-band.jpg" alt="Martial artists training in a window-lit studio">
-  <span class="hb-tint"></span><span class="hb-scrim"></span>
 </section>
 
 <!-- ===================== INTEGRITY ===================== -->
