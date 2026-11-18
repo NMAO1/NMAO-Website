@@ -19,7 +19,7 @@ img{max-width:100%}
 header.nav{position:sticky;top:0;z-index:50;background:rgba(11,15,30,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.02em;font-size:15px;color:var(--text);text-decoration:none}
-.brand img{width:28px;height:28px;object-fit:contain}
+.brand img{height:30px;width:auto;max-width:44px;object-fit:contain}
 .nav-links{display:flex;align-items:center;gap:22px}
 .nav-links a{color:var(--muted);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
 .nav-links a:hover{color:var(--text)}
